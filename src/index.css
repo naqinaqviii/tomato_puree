@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap');
+
+/* Core Styling & Custom Properties */
+:root {
+  --green-deep: #1E3A29;
+  --green-mid: #3B6248;
+  --tomato: #C4432A;
+  --tomato-dark: #9C341F;
+  --gold: #E3A23D;
+  --cream: #F7F1E6;
+  --cream-2: #FCFAF4;
+  --charcoal: #2A231C;
+  --sage: #A8B89A;
+  --card-bg: var(--cream-2);
+  --border-color: rgba(42, 35, 28, 0.08);
+  --text-primary: var(--charcoal);
+  --text-secondary: rgba(42, 35, 28, 0.7);
+  --bg-gradient: linear-gradient(135deg, var(--cream) 0%, var(--cream-2) 100%);
+  --glow-opacity: 0.15;
+}
+
+[data-theme="dark"] {
+  --green-deep: #0E1F15;
+  --green-mid: #25402F;
+  --tomato: #D74E35;
+  --tomato-dark: #B93E27;
+  --gold: #F4B84B;
+  --cream: #18221B;
+  --cream-2: #1F2C23;
+  --charcoal: #F5EFEB;
+  --sage: #8A9D7B;
+  --card-bg: #233429;
+  --border-color: rgba(245, 239, 235, 0.1);
+  --text-primary: #F5EFEB;
+  --text-secondary: rgba(245, 239, 235, 0.7);
+  --bg-gradient: linear-gradient(135deg, #16241C 0%, #203327 100%);
+  --glow-opacity: 0.3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+  background-color: var(--cream);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--green-mid);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tomato);
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--tomato);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 10000;
+}
+
+@media (max-width: 900px) {
+  .custom-cursor, .custom-cursor-dot {
+    display: none;
+  }
+}
